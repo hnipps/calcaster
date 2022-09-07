@@ -11,6 +11,9 @@ dotenv.config();
 
 import { Event, EventData } from "../../types";
 import getWallet from "./wallet";
+import init from "./lit";
+import encrypt from "./lit/encrypt";
+import config from "./config";
 
 // If modifying these scopes, delete token.json.
 const SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
@@ -140,3 +143,27 @@ async function listEvents(auth: BaseExternalAccountClient | OAuth2Client) {
 }
 
 authorize().then(listEvents).catch(console.error);
+
+(async () => {
+  const litNodeClient = await init();
+  const chain = "ethereum";
+
+  fs.readFile(CALCASTER_DATA_PATH, { encoding: "utf-8" })
+    .then(async (file) => {
+      const blob = new Blob([file], {
+        type: "application/json",
+      });
+
+      const result = await encrypt(
+        litNodeClient,
+        blob,
+        wallet,
+        wallet.address,
+        chain,
+        config.accessControlConditions
+      );
+
+      console.log(result);
+    })
+    .catch(console.error);
+})();
