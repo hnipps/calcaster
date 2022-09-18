@@ -1,7 +1,5 @@
 import { Wallet } from "ethers";
-import { SiweMessage } from "siwe";
 import LitJsSdk from "@lit-protocol/sdk-nodejs";
-import { getAddress, hexlify, toUtf8Bytes } from "ethers/lib/utils";
 
 const encrypt = async (
   litNodeClient: any,

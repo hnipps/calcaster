@@ -14,6 +14,7 @@ import getWallet from "./wallet";
 import init from "./lit";
 import encrypt from "./lit/encrypt";
 import config from "./config";
+import decrypt from "./lit/decrypt";
 
 // If modifying these scopes, delete token.json.
 const SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
@@ -23,6 +24,7 @@ const SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
 const TOKEN_PATH = path.join(__dirname, "../token.json");
 const CREDENTIALS_PATH = path.join(__dirname, "../credentials.json");
 const CALCASTER_DATA_PATH = path.join(__dirname, "../output/data.json");
+const ENCRYPTED_DATA_PATH = path.join(__dirname, "../encrypted/encrypted.json");
 
 const wallet = getWallet(process.env.MNEMONIC);
 console.info("Address:", wallet.address);
@@ -148,22 +150,45 @@ authorize().then(listEvents).catch(console.error);
   const litNodeClient = await init();
   const chain = "ethereum";
 
-  fs.readFile(CALCASTER_DATA_PATH, { encoding: "utf-8" })
-    .then(async (file) => {
-      const blob = new Blob([file], {
-        type: "application/json",
-      });
-
-      const result = await encrypt(
-        litNodeClient,
-        blob,
-        wallet,
-        wallet.address,
-        chain,
-        config.accessControlConditions
-      );
-
-      console.log(result);
-    })
+  const file = await fs
+    .readFile(CALCASTER_DATA_PATH, { encoding: "utf-8" })
     .catch(console.error);
+
+  if (!file) {
+    throw new Error("Cannot read file.");
+  }
+
+  const blob = new Blob([file], {
+    type: "application/json",
+  });
+
+  const result = await encrypt(
+    litNodeClient,
+    blob,
+    wallet,
+    wallet.address,
+    chain,
+    config.accessControlConditions
+  );
+
+  console.log(result);
+
+  await fs.writeFile(ENCRYPTED_DATA_PATH, result.encryptedFile.stream());
+
+  console.log("Encrypted!");
+
+  const encryptedFileBuffer = await fs.readFile(ENCRYPTED_DATA_PATH);
+  const encryptedFileBlob = new Blob([encryptedFileBuffer]);
+
+  const decryptedFile = await decrypt(
+    litNodeClient,
+    wallet,
+    config.accessControlConditions,
+    result.encryptedSymmetricKey,
+    chain,
+    encryptedFileBlob
+  );
+
+  console.log("DECRYPTED:");
+  console.log(decryptedFile);
 })();

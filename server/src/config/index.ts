@@ -20,7 +20,7 @@ const config = {
       parameters: [":userAddress"],
       returnValueTest: {
         comparator: "=",
-        value: "0x50e2dac5e78B5905CB09495547452cEE64426bb2",
+        value: "0xBC1b379cD5182F0f096402223794afa0994B812c",
       },
     },
   ],
