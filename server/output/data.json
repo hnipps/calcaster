@@ -1,1 +1,44 @@
-[{"data":{"start":{"datetime":"2022-09-07T07:00:00-04:00","timezone":"America/Toronto"},"end":{"datetime":"2022-09-07T08:00:00-04:00","timezone":"America/Toronto"}},"merkleRoot":"0x1efb6861c98e100c2a46d19c5a325c4820ba38e7bd50de60c85225579e54719f","signature":"0xd904cddcb01901987e3044e1532cf14226fcf28432c16826f17ff6ea61fac3e46ce634e56a05113568375834a14a5512419a361a4f17ab728cf6f1c528a9b4ef1b"},{"data":{"start":{"datetime":"2022-09-07T11:00:00-04:00","timezone":"America/Toronto"},"end":{"datetime":"2022-09-07T12:00:00-04:00","timezone":"America/Toronto"}},"merkleRoot":"0xd771ad33ff100bf26b7f5fe59a401534d20d5dde0da27209f1be64bdb9bcb4ce","signature":"0x476b83eb398e7974e41d6bfbe2e0527f6f3d5e0213849106d6060a9ff426429b64fb99030e8d36f0f1e47d68b8b956d8cb06f934e219714646a0627c6ee267ef1b"},{"data":{"start":{"datetime":"2022-09-07T12:00:00-04:00","timezone":"America/Toronto"},"end":{"datetime":"2022-09-07T13:00:00-04:00","timezone":"America/Toronto"}},"merkleRoot":"0x009ffaa7e230bacf7fd27a425e9ab94b66c87a1aba8794b30cd38974bc2be403","signature":"0x800d74b78d89619951a3f5132ed4ea03e9955d7dff81e53294b4211385bf1f9204a2012b8455ee9625860a8544b54373473b704131728274cbe710bb94ff97af1b"}]
+[
+  {
+    "data": {
+      "start": {
+        "datetime": "2022-09-21T07:00:00-04:00",
+        "timezone": "America/Toronto"
+      },
+      "end": {
+        "datetime": "2022-09-21T08:00:00-04:00",
+        "timezone": "America/Toronto"
+      }
+    },
+    "merkleRoot": "0x1efb6861c98e100c2a46d19c5a325c4820ba38e7bd50de60c85225579e54719f",
+    "signature": "0xd904cddcb01901987e3044e1532cf14226fcf28432c16826f17ff6ea61fac3e46ce634e56a05113568375834a14a5512419a361a4f17ab728cf6f1c528a9b4ef1b"
+  },
+  {
+    "data": {
+      "start": {
+        "datetime": "2022-09-21T11:00:00-04:00",
+        "timezone": "America/Toronto"
+      },
+      "end": {
+        "datetime": "2022-09-21T12:00:00-04:00",
+        "timezone": "America/Toronto"
+      }
+    },
+    "merkleRoot": "0xd771ad33ff100bf26b7f5fe59a401534d20d5dde0da27209f1be64bdb9bcb4ce",
+    "signature": "0x476b83eb398e7974e41d6bfbe2e0527f6f3d5e0213849106d6060a9ff426429b64fb99030e8d36f0f1e47d68b8b956d8cb06f934e219714646a0627c6ee267ef1b"
+  },
+  {
+    "data": {
+      "start": {
+        "datetime": "2022-09-21T12:00:00-04:00",
+        "timezone": "America/Toronto"
+      },
+      "end": {
+        "datetime": "2022-09-21T13:00:00-04:00",
+        "timezone": "America/Toronto"
+      }
+    },
+    "merkleRoot": "0x009ffaa7e230bacf7fd27a425e9ab94b66c87a1aba8794b30cd38974bc2be403",
+    "signature": "0x800d74b78d89619951a3f5132ed4ea03e9955d7dff81e53294b4211385bf1f9204a2012b8455ee9625860a8544b54373473b704131728274cbe710bb94ff97af1b"
+  }
+]
