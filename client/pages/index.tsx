@@ -23,7 +23,6 @@ const Home: NextPage = () => {
   const getEncryptedFile = () =>
     fetch(`/api/encrypted.json`).then((res) => res.blob());
 
-  // TODO: Try moving to server side
   const decryptFile = useCallback(async () => {
     if (client) {
       const { accessControlConditions, encryptedSymmetricKey } =

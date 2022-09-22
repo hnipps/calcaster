@@ -22,7 +22,7 @@ const CalendarComponent = ({ events }: Props) => {
   return (
     <Calendar
       isReadOnly
-      height="100%"
+      height="900px"
       view="day"
       calendars={calendars}
       events={initialEvents}
