@@ -14,4 +14,6 @@
 
 ~~[ ] Client can search for users by FC name, grab directory URI, display calendar~~
 
-[ ] Fix GCal stuff - make UI for initial data creation and encryption
+[ ] Generate new Google API credentials - I believe this has been compromised and Google might have deactivated them.
+
+[ ] Fix GCal stuff - make UI for initial data creation and encryption.
