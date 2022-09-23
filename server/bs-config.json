@@ -1,5 +1,5 @@
 {
-  "port": 8000,
-  "files": ["./output/**/*.json"],
-  "server": { "baseDir": "./output" }
+  "port": 9090,
+  "files": ["./public/**/*.json"],
+  "server": { "baseDir": "./public" }
 }

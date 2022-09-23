@@ -4,5 +4,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "workspaces": ["contracts", "server", "client"]
+  "workspaces": [
+    "contracts",
+    "server",
+    "client"
+  ]
 }
